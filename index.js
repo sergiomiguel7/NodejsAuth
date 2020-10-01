@@ -24,10 +24,8 @@ app.use(middlewares.checkTokenSetUser);
 
 //routes uses
 app.use('/auth', auth);
-app.use('/clients', middlewares.isLoggedIn, clients);
-app.use('/sessions', middlewares.isLoggedIn, sessions);
-app.use('/exercises', middlewares.isLoggedIn, exercises);
-
+//here you can use middlewares.isLoggendIn to auth the api routes
+//Example  -> app.use('/clients', middlewares.isLoggedIn, clients);
 
 
 app.get('/', (req, res, next) => {
